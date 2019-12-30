@@ -35,7 +35,7 @@ public class SellerUserController {
         }
 
         //2. 设置token至redis
-        //2.
+        //6.
 
 
         //3. 设置token至cookie
