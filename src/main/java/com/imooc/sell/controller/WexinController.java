@@ -25,6 +25,5 @@ public class WexinController {
         RestTemplate restTemplate = new RestTemplate();
         String response = restTemplate.getForObject(url, String.class);
         log.info("response={}",response);
-        //11
     }
 }
