@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * 买家端订单
  * @author bizy
  * @date 2019/11/17 16:27
  */
@@ -81,7 +82,7 @@ public class BuyerOrderController {
     @GetMapping("/detail")
     public ResultVO<OrderDTO> detail(@RequestParam("openid") String openid,
                                      @RequestParam("orderId") String orderId) {
-        OrderDTO orderDTO = buyerService.findOrderOne(openid, orderId);
+        OrderDTO orderDTO = buyerService.findOrderOne("oTgZpwfjdYVOfxOl1-YDUmCcjY8s", orderId);
         return ResultVOUtil.success(orderDTO);
     }
 
@@ -89,7 +90,7 @@ public class BuyerOrderController {
     @PostMapping("/cancel")
     public ResultVO cancel(@RequestParam("openid") String openid,
                            @RequestParam("orderId") String orderId) {
-       buyerService.findOrderOne(openid,orderId);
+       buyerService.cancelOrder("oTgZpwfjdYVOfxOl1-YDUmCcjY8s",orderId);
         return ResultVOUtil.success();
     }
 }

@@ -61,4 +61,16 @@ public class ProductServiceImplTest {
         ProductInfo result = productService.save(productInfo);
         Assert.assertNotNull(result);
     }
+
+    @Test
+    public void onSale(){
+        ProductInfo productInfo = productService.onSale("1234501");
+        Assert.assertTrue("上架成功:",productInfo.getProductStatus() == 0);
+    }
+
+    @Test
+    public void offSale(){
+        ProductInfo productInfo = productService.offSale("1234501");
+        Assert.assertTrue("下架成功:",productInfo.getProductStatus() == 1);
+    }
 }
