@@ -8,6 +8,9 @@ spring:
     show-sql: true
   jackson:
     default-property-inclusion: non_null
+  redis:
+    host: 192.168.199.126
+    port: 6379
 
 server:
   context-path: /sell
@@ -31,8 +34,11 @@ wechat:
   mchKey: 098F6BCD4621D373CADE4E832627B4F6
   keyPath: E:\workspace\sell\doc\h5.p12
   notifyUrl: http://bizy.natapp1.cc/sell/pay/notify
+  templateId:
+    orderStatus: dPa1bIjmEsnZWfA1gx81P-2gVu6XGcQTfpVqqTK2o5Q
 
-  projectUrl:
-    pwechatMqAuthorize: http://bizy.natapp1.cc
-    wechatOpenAuthorize:
-    sell:
+projectUrl:
+  wechatMqAuthorize: http://bizy.natapp1.cc
+  wechatOpenAuthorize: http://bizy.natapp1.cc
+  sell: http://bizy.natapp1.cc
+

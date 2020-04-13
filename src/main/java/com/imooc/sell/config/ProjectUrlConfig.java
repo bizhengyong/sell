@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
  * @date 2019/12/29 19:14
  */
 @Data
-@ConfigurationProperties(prefix = "projectUrl")
 @Component
+@ConfigurationProperties(prefix = "projectUrl")
 public class ProjectUrlConfig {
 
     /**

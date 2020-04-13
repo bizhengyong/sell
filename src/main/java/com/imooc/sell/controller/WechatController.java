@@ -59,15 +59,16 @@ public class WechatController {
 
     @GetMapping("/qrAuthorize")
     public String qrAuthorize(@RequestParam("returnUrl") String returnUrl){
-//        String url = "http://bizy.natapp1.cc/sell/wechat/qrUserInfo";
+//        String url = projectUrlConfig.getWechatOpenAuthorize()+"/sell/wechat/qrUserInfo";
         String url = "http://sell.springboot.cn/sell/qr/oTgZpwfjdYVOfxOl1-YDUmCcjY8s";
+        returnUrl = "http://bizy.natapp1.cc/sell/wechat/qrUserInfo";
         String redirectUrl = wxOpenService.buildQrConnectUrl(url,WxConsts.QRCONNECT_SCOPE_SNSAPI_LOGIN, URLEncoder.encode(returnUrl));
         return "redirect:"+redirectUrl;
     }
 
     @GetMapping("/qrUserInfo")
     public String qrUserInfo(@RequestParam("code") String code,
-                             @RequestParam("state") String returnRul) {
+                             @RequestParam(value = "state",defaultValue = "http://bizy.natapp1.cc/sell/seller/login") String returnRul) {
         WxMpOAuth2AccessToken wxMpOAuth2AccessToken = new WxMpOAuth2AccessToken();
         try {
             wxMpOAuth2AccessToken = wxOpenService.oauth2getAccessToken(code);

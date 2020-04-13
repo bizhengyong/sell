@@ -17,8 +17,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 /**
  * @author bizy
  * @date 2019/10/10 20:01
@@ -38,9 +36,9 @@ public class OrderServiceImplTest {
     @Test
     public void create() {
         OrderDTO orderDTO = new OrderDTO();
-        orderDTO.setBuyerName("廖师兄");
-        orderDTO.setBuyerPhone("12345678901");
-        orderDTO.setBuyerAddress("融科天域");
+        orderDTO.setBuyerName("毕正勇");
+        orderDTO.setBuyerPhone("15901290000");
+        orderDTO.setBuyerAddress("湖北省武汉市洪山区融科天域");
         orderDTO.setBuyerOpenid(BUYER_OPENID);
 
         //购物车
