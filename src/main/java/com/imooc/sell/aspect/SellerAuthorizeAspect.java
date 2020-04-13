@@ -46,7 +46,7 @@ public class SellerAuthorizeAspect {
             throw new SellerAuthorizeException();
         }
 
-        //去redis里查询
+        //去redis里查询。
         String tokenValue = redisTemplate.opsForValue().get(String.format(RedisConstant.TOKEN_PREFIX,cookie.getValue()));
         if (StringUtils.isEmpty(tokenValue)) {
             log.warn("【登录校验】Redis中查不到token");
